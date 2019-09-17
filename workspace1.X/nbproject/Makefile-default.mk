@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=try1.asm
+SOURCEFILES_QUOTED_IF_SPACED=directive1.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/try1.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/try1.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/directive1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/directive1.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/try1.o
+OBJECTFILES=${OBJECTDIR}/directive1.o
 
 # Source Files
-SOURCEFILES=try1.asm
+SOURCEFILES=directive1.asm
 
 
 
@@ -95,22 +95,22 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/try1.o: try1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/directive1.o: directive1.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/try1.o.d 
-	@${RM} ${OBJECTDIR}/try1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/try1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/try1.lst\\\" -e\\\"${OBJECTDIR}/try1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/try1.o\\\" \\\"try1.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/try1.o"
-	@${FIXDEPS} "${OBJECTDIR}/try1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/directive1.o.d 
+	@${RM} ${OBJECTDIR}/directive1.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/directive1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/directive1.lst\\\" -e\\\"${OBJECTDIR}/directive1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/directive1.o\\\" \\\"directive1.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/directive1.o"
+	@${FIXDEPS} "${OBJECTDIR}/directive1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/try1.o: try1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/directive1.o: directive1.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/try1.o.d 
-	@${RM} ${OBJECTDIR}/try1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/try1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/try1.lst\\\" -e\\\"${OBJECTDIR}/try1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/try1.o\\\" \\\"try1.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/try1.o"
-	@${FIXDEPS} "${OBJECTDIR}/try1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/directive1.o.d 
+	@${RM} ${OBJECTDIR}/directive1.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/directive1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/directive1.lst\\\" -e\\\"${OBJECTDIR}/directive1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/directive1.o\\\" \\\"directive1.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/directive1.o"
+	@${FIXDEPS} "${OBJECTDIR}/directive1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 
