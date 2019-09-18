@@ -1,0 +1,17 @@
+Description
+
+The set directive is functionality equivalent to the equ directive except that
+set values may be subsequently altered by other set directives.
+
+Usage
+
+Because set directive values maybe altered by later set directives, set is particularly 
+useful when defining a variable in a loop
+
+EX
+
+area set 0 ; The label area is assigned value 0
+
+Note
+
+The value assigned by the equ directive may not be reassigned later
