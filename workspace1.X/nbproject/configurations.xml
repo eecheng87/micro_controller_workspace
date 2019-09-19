@@ -14,6 +14,7 @@
                    projectFiles="true">
       <itemPath>try1.asm</itemPath>
       <itemPath>directive1.asm</itemPath>
+      <itemPath>bra_prac1.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -500,6 +501,8 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
+      <item path="directive1.asm" ex="true" overriding="false">
+      </item>
       <mpasmsuite>
         <property key="absolute-mode" value="false"/>
         <property key="eeprom-width" value="8"/>
@@ -508,6 +511,12 @@
         <property key="extended-mode-mplink" value="false"/>
       </mpasmsuite>
       <item path="try1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
     </conf>
   </confs>
