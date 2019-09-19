@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=bra_prac1.asm
+SOURCEFILES_QUOTED_IF_SPACED=addressing_mode.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/bra_prac1.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/bra_prac1.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/addressing_mode.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/addressing_mode.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/bra_prac1.o
+OBJECTFILES=${OBJECTDIR}/addressing_mode.o
 
 # Source Files
-SOURCEFILES=bra_prac1.asm
+SOURCEFILES=addressing_mode.asm
 
 
 
@@ -95,22 +95,22 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/bra_prac1.o: bra_prac1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/addressing_mode.o: addressing_mode.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/bra_prac1.o.d 
-	@${RM} ${OBJECTDIR}/bra_prac1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/bra_prac1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/bra_prac1.lst\\\" -e\\\"${OBJECTDIR}/bra_prac1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/bra_prac1.o\\\" \\\"bra_prac1.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/bra_prac1.o"
-	@${FIXDEPS} "${OBJECTDIR}/bra_prac1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/addressing_mode.o.d 
+	@${RM} ${OBJECTDIR}/addressing_mode.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/addressing_mode.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/addressing_mode.lst\\\" -e\\\"${OBJECTDIR}/addressing_mode.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/addressing_mode.o\\\" \\\"addressing_mode.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/addressing_mode.o"
+	@${FIXDEPS} "${OBJECTDIR}/addressing_mode.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/bra_prac1.o: bra_prac1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/addressing_mode.o: addressing_mode.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/bra_prac1.o.d 
-	@${RM} ${OBJECTDIR}/bra_prac1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/bra_prac1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/bra_prac1.lst\\\" -e\\\"${OBJECTDIR}/bra_prac1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/bra_prac1.o\\\" \\\"bra_prac1.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/bra_prac1.o"
-	@${FIXDEPS} "${OBJECTDIR}/bra_prac1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/addressing_mode.o.d 
+	@${RM} ${OBJECTDIR}/addressing_mode.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/addressing_mode.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/addressing_mode.lst\\\" -e\\\"${OBJECTDIR}/addressing_mode.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/addressing_mode.o\\\" \\\"addressing_mode.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/addressing_mode.o"
+	@${FIXDEPS} "${OBJECTDIR}/addressing_mode.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 

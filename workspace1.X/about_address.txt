@@ -1,0 +1,8 @@
+This document is about how to really control file register in pic18
+
+如果單純執行movwf 10 ->　會移到010這排的00
+若在前一行多加movlb 2 ->　則會一到210這排的00
+
+所以f<=255即限制若不換BSR的話只能用0xx
+
+若換到　BSR=2　則只能用 2xx
