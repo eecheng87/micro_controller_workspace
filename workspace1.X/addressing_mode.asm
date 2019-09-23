@@ -5,7 +5,7 @@ LIST p=18f4520
       
 write MACRO Var, Address
 	movlw Var
-	movwf Address, 1
+	movwf Address,1
 	ENDM 	
     org 0x00
     offset equ 0x13
@@ -27,21 +27,20 @@ start:
 	write 0x60, 0x010a
  	write 0x66, 0x010b
 
-	
-	;lfsr FSR0, 0x13
+ 
 	lfsr FSR1, 0x0100
 	lfsr FSR2, 0x0200
 
 loop:
 	movlw 0x0b
-	cpfsgt FSR1L;  
+	cpfsgt FSR1L, 0; should specify a or ignore, cuz FSR is in SFR(access b)  
 	goto cal
 	goto exit
 cal:
     	movf POSTINC1, 0 
 	addlw offset
 	movlb 2
-	movwf POSTINC2 
+	movwf POSTINC2, 0
 	goto loop	
 exit:
 	nop

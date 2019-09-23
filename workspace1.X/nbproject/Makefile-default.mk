@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=addressing_mode.asm
+SOURCEFILES_QUOTED_IF_SPACED=table_operation2.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/addressing_mode.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/addressing_mode.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/table_operation2.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/table_operation2.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/addressing_mode.o
+OBJECTFILES=${OBJECTDIR}/table_operation2.o
 
 # Source Files
-SOURCEFILES=addressing_mode.asm
+SOURCEFILES=table_operation2.asm
 
 
 
@@ -95,22 +95,22 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/addressing_mode.o: addressing_mode.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/table_operation2.o: table_operation2.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/addressing_mode.o.d 
-	@${RM} ${OBJECTDIR}/addressing_mode.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/addressing_mode.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/addressing_mode.lst\\\" -e\\\"${OBJECTDIR}/addressing_mode.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/addressing_mode.o\\\" \\\"addressing_mode.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/addressing_mode.o"
-	@${FIXDEPS} "${OBJECTDIR}/addressing_mode.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/table_operation2.o.d 
+	@${RM} ${OBJECTDIR}/table_operation2.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/table_operation2.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/table_operation2.lst\\\" -e\\\"${OBJECTDIR}/table_operation2.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/table_operation2.o\\\" \\\"table_operation2.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/table_operation2.o"
+	@${FIXDEPS} "${OBJECTDIR}/table_operation2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/addressing_mode.o: addressing_mode.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/table_operation2.o: table_operation2.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/addressing_mode.o.d 
-	@${RM} ${OBJECTDIR}/addressing_mode.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/addressing_mode.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/addressing_mode.lst\\\" -e\\\"${OBJECTDIR}/addressing_mode.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/addressing_mode.o\\\" \\\"addressing_mode.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/addressing_mode.o"
-	@${FIXDEPS} "${OBJECTDIR}/addressing_mode.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/table_operation2.o.d 
+	@${RM} ${OBJECTDIR}/table_operation2.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/table_operation2.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/table_operation2.lst\\\" -e\\\"${OBJECTDIR}/table_operation2.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/table_operation2.o\\\" \\\"table_operation2.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/table_operation2.o"
+	@${FIXDEPS} "${OBJECTDIR}/table_operation2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 

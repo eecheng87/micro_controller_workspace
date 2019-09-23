@@ -16,6 +16,9 @@
       <itemPath>directive1.asm</itemPath>
       <itemPath>bra_prac1.asm</itemPath>
       <itemPath>addressing_mode.asm</itemPath>
+      <itemPath>writeMemTest.asm</itemPath>
+      <itemPath>table_operation1.asm</itemPath>
+      <itemPath>table_operation2.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -502,7 +505,15 @@
                   value=""/>
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
+      <item path="addressing_mode.asm" ex="true" overriding="false">
+      </item>
       <item path="bra_prac1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
       <item path="directive1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
@@ -519,7 +530,17 @@
         <property key="extended-mode-mpasm" value="false"/>
         <property key="extended-mode-mplink" value="false"/>
       </mpasmsuite>
+      <item path="table_operation1.asm" ex="true" overriding="false">
+      </item>
       <item path="try1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
+      </item>
+      <item path="writeMemTest.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
