@@ -19,6 +19,8 @@
       <itemPath>writeMemTest.asm</itemPath>
       <itemPath>table_operation1.asm</itemPath>
       <itemPath>table_operation2.asm</itemPath>
+      <itemPath>bitwise1.asm</itemPath>
+      <itemPath>ffmultiplier.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -506,6 +508,14 @@
         <property key="warningmessagebreakoptions.warningmessages" value="holdstate"/>
       </Simulator>
       <item path="addressing_mode.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
+      </item>
+      <item path="bitwise1.asm" ex="true" overriding="false">
       </item>
       <item path="bra_prac1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
@@ -531,6 +541,14 @@
         <property key="extended-mode-mplink" value="false"/>
       </mpasmsuite>
       <item path="table_operation1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
+      </item>
+      <item path="table_operation2.asm" ex="true" overriding="false">
       </item>
       <item path="try1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
