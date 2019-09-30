@@ -21,6 +21,7 @@
       <itemPath>table_operation2.asm</itemPath>
       <itemPath>bitwise1.asm</itemPath>
       <itemPath>ffmultiplier.asm</itemPath>
+      <itemPath>multiplier8bS.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -516,6 +517,12 @@
         </mpasmsuite>
       </item>
       <item path="bitwise1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
       <item path="bra_prac1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
@@ -533,6 +540,8 @@
         <mpasmsuite>
         </mpasmsuite>
       </item>
+      <item path="ffmultiplier.asm" ex="true" overriding="false">
+      </item>
       <mpasmsuite>
         <property key="absolute-mode" value="false"/>
         <property key="eeprom-width" value="8"/>
@@ -540,6 +549,8 @@
         <property key="extended-mode-mpasm" value="false"/>
         <property key="extended-mode-mplink" value="false"/>
       </mpasmsuite>
+      <item path="multiplier8bS.asm" ex="true" overriding="false">
+      </item>
       <item path="table_operation1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
@@ -549,6 +560,12 @@
         </mpasmsuite>
       </item>
       <item path="table_operation2.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
       <item path="try1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>

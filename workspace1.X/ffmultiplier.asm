@@ -7,9 +7,9 @@ LIST p=18f4520
     start:
 	movlw 0x04 ; index
 	movwf 0x00,0
-	movlw 0x0F ; A
+	movlw 0x0a ; A
 	movwf TRISB
-	movlw 0x0F ; B
+	movlw 0x03 ; B
 	movwf TRISC
 	clrf WREG
     loop:

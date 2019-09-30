@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=ffmultiplier.asm
+SOURCEFILES_QUOTED_IF_SPACED=
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/ffmultiplier.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/ffmultiplier.o.d
+OBJECTFILES_QUOTED_IF_SPACED=
+POSSIBLE_DEPFILES=
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/ffmultiplier.o
+OBJECTFILES=
 
 # Source Files
-SOURCEFILES=ffmultiplier.asm
+SOURCEFILES=
 
 
 
@@ -95,23 +95,7 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/ffmultiplier.o: ffmultiplier.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ffmultiplier.o.d 
-	@${RM} ${OBJECTDIR}/ffmultiplier.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ffmultiplier.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ffmultiplier.lst\\\" -e\\\"${OBJECTDIR}/ffmultiplier.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/ffmultiplier.o\\\" \\\"ffmultiplier.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/ffmultiplier.o"
-	@${FIXDEPS} "${OBJECTDIR}/ffmultiplier.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
-	
 else
-${OBJECTDIR}/ffmultiplier.o: ffmultiplier.asm  nbproject/Makefile-${CND_CONF}.mk
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/ffmultiplier.o.d 
-	@${RM} ${OBJECTDIR}/ffmultiplier.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/ffmultiplier.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/ffmultiplier.lst\\\" -e\\\"${OBJECTDIR}/ffmultiplier.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/ffmultiplier.o\\\" \\\"ffmultiplier.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/ffmultiplier.o"
-	@${FIXDEPS} "${OBJECTDIR}/ffmultiplier.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
-	
 endif
 
 # ------------------------------------------------------------------------------------
