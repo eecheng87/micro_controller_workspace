@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=stack1.asm
+SOURCEFILES_QUOTED_IF_SPACED=subroutine1.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/stack1.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/stack1.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/subroutine1.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/subroutine1.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/stack1.o
+OBJECTFILES=${OBJECTDIR}/subroutine1.o
 
 # Source Files
-SOURCEFILES=stack1.asm
+SOURCEFILES=subroutine1.asm
 
 
 
@@ -95,22 +95,22 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/stack1.o: stack1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/subroutine1.o: subroutine1.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/stack1.o.d 
-	@${RM} ${OBJECTDIR}/stack1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/stack1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/stack1.lst\\\" -e\\\"${OBJECTDIR}/stack1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/stack1.o\\\" \\\"stack1.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/stack1.o"
-	@${FIXDEPS} "${OBJECTDIR}/stack1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/subroutine1.o.d 
+	@${RM} ${OBJECTDIR}/subroutine1.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/subroutine1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/subroutine1.lst\\\" -e\\\"${OBJECTDIR}/subroutine1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/subroutine1.o\\\" \\\"subroutine1.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/subroutine1.o"
+	@${FIXDEPS} "${OBJECTDIR}/subroutine1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/stack1.o: stack1.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/subroutine1.o: subroutine1.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/stack1.o.d 
-	@${RM} ${OBJECTDIR}/stack1.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/stack1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/stack1.lst\\\" -e\\\"${OBJECTDIR}/stack1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/stack1.o\\\" \\\"stack1.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/stack1.o"
-	@${FIXDEPS} "${OBJECTDIR}/stack1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/subroutine1.o.d 
+	@${RM} ${OBJECTDIR}/subroutine1.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/subroutine1.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/subroutine1.lst\\\" -e\\\"${OBJECTDIR}/subroutine1.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/subroutine1.o\\\" \\\"subroutine1.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/subroutine1.o"
+	@${FIXDEPS} "${OBJECTDIR}/subroutine1.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 

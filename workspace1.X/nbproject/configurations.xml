@@ -24,6 +24,7 @@
       <itemPath>multiplier8bS.asm</itemPath>
       <itemPath>unsignedDivider8.asm</itemPath>
       <itemPath>stack1.asm</itemPath>
+      <itemPath>subroutine1.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -565,6 +566,8 @@
         <mpasmsuite>
         </mpasmsuite>
       </item>
+      <item path="stack1.asm" ex="true" overriding="false">
+      </item>
       <item path="table_operation1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
@@ -590,6 +593,12 @@
         </mpasmsuite>
       </item>
       <item path="unsignedDivider8.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
       <item path="writeMemTest.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
