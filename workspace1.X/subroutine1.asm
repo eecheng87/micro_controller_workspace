@@ -47,12 +47,14 @@ start:
 
 	lfsr 	FSR1,0x100
 	movlw 	low arr_x
-	movwf TBLPTRL,0;pushr	WREG
+	pushr	WREG
 	movlw 	high arr_x
-	movwf TBLPTRH,0;pushr 	WREG
+	pushr 	WREG
 	movlw 	upper arr_x
-	movwf TBLPTRU,0;pushr 	WREG
-	tblrd*+
+	pushr 	WREG
+	movlw acnt
+	pushr WREG
+	
 	call 	find_m,FAST
 	movff	PRODL,array_max
 	dealloc_stk	4
@@ -81,6 +83,7 @@ find_m:
 	movlw	ar_xup
 	movff	PLUSW2,TBLPTRU
 	tblrd*+
+	
 	movlw	ar_max
 	movff	TABLAT,PLUSW2
 	
@@ -95,9 +98,9 @@ next:
 	tblrd*+
 	movlw	ar_max
 	movf	PLUSW2,W,A
-	cpfsgt	TABLAT
+	cpfsgt	TABLAT ; compare f with W, skip if f>w
 	goto	cmp_lp
-	movlw	ar_max
+	movlw	ar_max ; change max
 	movff	TABLAT,PLUSW2
 	goto	cmp_lp
 done:
@@ -117,3 +120,23 @@ arr_x	db 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16
 
 end
 
+
+/*
+	memory layout
+	
+	empty <---- fsr1
+	ar_max
+	lp_cnt
+	TBLPTRU      
+	H
+	L      <---- fsr2
+	FSR2H
+	FSR2L
+	ar_cnt
+	arr_xup      } here is data passing as parameter ( push before caller and using in subroutine)
+	xhi
+	xlo
+	
+	
+	
+	*/

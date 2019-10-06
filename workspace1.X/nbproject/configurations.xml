@@ -567,6 +567,14 @@
         </mpasmsuite>
       </item>
       <item path="stack1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
+      </item>
+      <item path="subroutine1.asm" ex="true" overriding="false">
       </item>
       <item path="table_operation1.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
