@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=
+SOURCEFILES_QUOTED_IF_SPACED=finbonacci.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=
-POSSIBLE_DEPFILES=
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/finbonacci.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/finbonacci.o.d
 
 # Object Files
-OBJECTFILES=
+OBJECTFILES=${OBJECTDIR}/finbonacci.o
 
 # Source Files
-SOURCEFILES=
+SOURCEFILES=finbonacci.asm
 
 
 
@@ -95,7 +95,23 @@ MP_LINKER_DEBUG_OPTION=
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
+${OBJECTDIR}/finbonacci.o: finbonacci.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/finbonacci.o.d 
+	@${RM} ${OBJECTDIR}/finbonacci.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/finbonacci.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_SIMULATOR=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/finbonacci.lst\\\" -e\\\"${OBJECTDIR}/finbonacci.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/finbonacci.o\\\" \\\"finbonacci.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/finbonacci.o"
+	@${FIXDEPS} "${OBJECTDIR}/finbonacci.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 else
+${OBJECTDIR}/finbonacci.o: finbonacci.asm  nbproject/Makefile-${CND_CONF}.mk
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/finbonacci.o.d 
+	@${RM} ${OBJECTDIR}/finbonacci.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/finbonacci.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/finbonacci.lst\\\" -e\\\"${OBJECTDIR}/finbonacci.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/finbonacci.o\\\" \\\"finbonacci.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/finbonacci.o"
+	@${FIXDEPS} "${OBJECTDIR}/finbonacci.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	
 endif
 
 # ------------------------------------------------------------------------------------

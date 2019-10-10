@@ -8,7 +8,7 @@ LIST p=18f4520
 
 pushr	macro	arg
 	movff	arg,POSTINC1
-	endm
+	endm	
 popr	macro	arg
 	movff 	POSTDEC1,arg
 	movff	INDF1,arg
