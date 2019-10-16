@@ -38,8 +38,8 @@ ADDFFF macro f1,f2,f_res
 
 	
 	n equ D'11'
-	f1 equ 0x00
-	f2 equ 0x01
+	f1 equ 0x31
+	f2 equ 0x32
 	f3 equ 0x02
 	n_offset equ 0x03
 	
