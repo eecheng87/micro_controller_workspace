@@ -3,20 +3,20 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>lib1</name>
-            <creation-uuid>5906d17f-caa8-4c23-9840-3ac0825cc66c</creation-uuid>
+            <name>libTest</name>
+            <creation-uuid>25a56f17-0907-464b-925a-0634a4f104f9</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions/>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
-            <sourceEncoding>ISO-8859-1</sourceEncoding>
+            <sourceEncoding>UTF-8</sourceEncoding>
             <make-dep-projects/>
             <sourceRootList/>
             <confList>
                 <confElem>
                     <name>default</name>
-                    <type>3</type>
+                    <type>2</type>
                 </confElem>
             </confList>
             <formatting>
