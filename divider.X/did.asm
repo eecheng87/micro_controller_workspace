@@ -24,7 +24,7 @@ PSECT mytext, local, class=CODE,reloc=2
     btfss STATUS,C,0 ; skip if set -> C=0 means negative
     goto nega
     bsf quo,0,0; positive
-    movwf rem;,0
+    movwf rem;,A
     goto next
     nega:
     bcf quo,0,0

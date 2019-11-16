@@ -5,6 +5,8 @@
         <group>
             <file>file:/home/steven/Desktop/micro_controller_workspace/workspace2.X/divmain.c</file>
             <file>file:/home/steven/Desktop/micro_controller_workspace/workspace2.X/divide.asm</file>
+            <file>file:/home/steven/Desktop/micro_controller_workspace/workspace2.X/newAsmTemplate.asm</file>
+            <file>file:/home/steven/Desktop/micro_controller_workspace/workspace2.X/add.asm</file>
         </group>
     </open-files>
 </project-private>

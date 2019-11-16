@@ -26,6 +26,7 @@
       <itemPath>stack1.asm</itemPath>
       <itemPath>subroutine1.asm</itemPath>
       <itemPath>finbonacci.asm</itemPath>
+      <itemPath>newAsmTemplate.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -551,6 +552,8 @@
         </MPASMWIN-LD>
         <mpasmsuite>
         </mpasmsuite>
+      </item>
+      <item path="finbonacci.asm" ex="true" overriding="false">
       </item>
       <mpasmsuite>
         <property key="absolute-mode" value="false"/>

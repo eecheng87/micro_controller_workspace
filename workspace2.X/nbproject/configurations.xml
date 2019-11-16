@@ -16,6 +16,7 @@
       <itemPath>add.asm</itemPath>
       <itemPath>divmain.c</itemPath>
       <itemPath>divide.asm</itemPath>
+      <itemPath>newAsmTemplate.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -594,8 +595,24 @@
         </XC8-config-global>
       </item>
       <item path="divide.asm" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="divmain.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
       </item>
       <item path="main.c" ex="true" overriding="false">
         <HI-TECH-COMP>
