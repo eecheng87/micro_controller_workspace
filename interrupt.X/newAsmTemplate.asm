@@ -17,7 +17,7 @@ LIST p=18f4520
 
 ; CONFIG3H
   CONFIG  CCP2MX = PORTC        ; CCP2 MUX bit (CCP2 input/output is multiplexed with RC1)
-  CONFIG  PBADEN = ON           ; PORTB A/D Enable bit (PORTB<4:0> pins are configured as analog input channels on Reset)
+  CONFIG  PBADEN = OFF          ; PORTB A/D Enable bit (PORTB<4:0> pins are configured as analog input channels on Reset)
   CONFIG  LPT1OSC = OFF         ; Low-Power Timer1 Oscillator Enable bit (Timer1 configured for higher power operation)
   CONFIG  MCLRE = ON            ; MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
@@ -87,25 +87,10 @@ LIST p=18f4520
   
   ISR:
     org 0x08
-    
-     
-    ;clrf LATD 
-    ;DELAY d'180',d'60'
-    ;DELAY d'180',d'60'
-    ;DELAY d'180',d'60'
     btg 0x00,0,0 ; toggle 0x00 bit 0
     bcf INTCON,INT0IF ; clear external interrupt flag
-    ;bsf PORTD,1,0
-    ;Delay
-    ;movlw count_val
-    ;movwf tmr0l,0
-    ;bcf intcon,TMR0IF // disable TMR0 Overflow Interrupt Flag bit 
-    ;bcf portd,1,0
     retfie
   Initial:
-    ;clrf porta
-    ;clrf lata
-    ;bsf trisa,4
     clrf TRISD
     clrf PORTD
     clrf TRISB
@@ -117,8 +102,8 @@ LIST p=18f4520
     bsf 0x00,0
     bsf 0x01,0 ; initial led position at rd0
     
-    movlw 0x0f
-    movwf ADCON1   
+    ;movlw 0x0f
+    ;movwf ADCON1   
     ;movlw b'11111000'
     ;movwf t0con,0
     
