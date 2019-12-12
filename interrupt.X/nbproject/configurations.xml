@@ -14,6 +14,7 @@
                    projectFiles="true">
       <itemPath>newAsmTemplate.asm</itemPath>
       <itemPath>newAsmTemplate1.asm</itemPath>
+      <itemPath>newAsmTemplate2.asm</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -85,7 +86,7 @@
         <property key="extended-mode-mpasm" value="false"/>
         <property key="extended-mode-mplink" value="false"/>
       </mpasmsuite>
-      <item path="newAsmTemplate.asm" ex="false" overriding="false">
+      <item path="newAsmTemplate.asm" ex="true" overriding="false">
         <MPASMWIN-AS>
         </MPASMWIN-AS>
         <MPASMWIN-LD>
@@ -94,6 +95,12 @@
         </mpasmsuite>
       </item>
       <item path="newAsmTemplate1.asm" ex="true" overriding="false">
+        <MPASMWIN-AS>
+        </MPASMWIN-AS>
+        <MPASMWIN-LD>
+        </MPASMWIN-LD>
+        <mpasmsuite>
+        </mpasmsuite>
       </item>
     </conf>
   </confs>

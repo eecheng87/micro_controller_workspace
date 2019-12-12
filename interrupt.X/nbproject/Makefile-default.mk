@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=newAsmTemplate.asm
+SOURCEFILES_QUOTED_IF_SPACED=newAsmTemplate2.asm
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newAsmTemplate.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/newAsmTemplate.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/newAsmTemplate2.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/newAsmTemplate2.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/newAsmTemplate.o
+OBJECTFILES=${OBJECTDIR}/newAsmTemplate2.o
 
 # Source Files
-SOURCEFILES=newAsmTemplate.asm
+SOURCEFILES=newAsmTemplate2.asm
 
 
 
@@ -95,22 +95,22 @@ MP_LINKER_DEBUG_OPTION=-r=ROM@0x7DC0:0x7FFF -r=RAM@GPR:0x5F4:0x5FF
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: assemble
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/newAsmTemplate.o: newAsmTemplate.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/newAsmTemplate2.o: newAsmTemplate2.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o.d 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/newAsmTemplate.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/newAsmTemplate.lst\\\" -e\\\"${OBJECTDIR}/newAsmTemplate.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/newAsmTemplate.o\\\" \\\"newAsmTemplate.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/newAsmTemplate.o"
-	@${FIXDEPS} "${OBJECTDIR}/newAsmTemplate.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/newAsmTemplate2.o.d 
+	@${RM} ${OBJECTDIR}/newAsmTemplate2.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/newAsmTemplate2.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -d__DEBUG -d__MPLAB_DEBUGGER_PK3=1 -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/newAsmTemplate2.lst\\\" -e\\\"${OBJECTDIR}/newAsmTemplate2.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/newAsmTemplate2.o\\\" \\\"newAsmTemplate2.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/newAsmTemplate2.o"
+	@${FIXDEPS} "${OBJECTDIR}/newAsmTemplate2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 else
-${OBJECTDIR}/newAsmTemplate.o: newAsmTemplate.asm  nbproject/Makefile-${CND_CONF}.mk
+${OBJECTDIR}/newAsmTemplate2.o: newAsmTemplate2.asm  nbproject/Makefile-${CND_CONF}.mk
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o.d 
-	@${RM} ${OBJECTDIR}/newAsmTemplate.o 
-	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/newAsmTemplate.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/newAsmTemplate.lst\\\" -e\\\"${OBJECTDIR}/newAsmTemplate.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/newAsmTemplate.o\\\" \\\"newAsmTemplate.asm\\\" 
-	@${DEP_GEN} -d "${OBJECTDIR}/newAsmTemplate.o"
-	@${FIXDEPS} "${OBJECTDIR}/newAsmTemplate.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
+	@${RM} ${OBJECTDIR}/newAsmTemplate2.o.d 
+	@${RM} ${OBJECTDIR}/newAsmTemplate2.o 
+	@${FIXDEPS} dummy.d -e "${OBJECTDIR}/newAsmTemplate2.err" $(SILENT) -c ${MP_AS} $(MP_EXTRA_AS_PRE) -q -p$(MP_PROCESSOR_OPTION) -u  -l\\\"${OBJECTDIR}/newAsmTemplate2.lst\\\" -e\\\"${OBJECTDIR}/newAsmTemplate2.err\\\" $(ASM_OPTIONS)    -o\\\"${OBJECTDIR}/newAsmTemplate2.o\\\" \\\"newAsmTemplate2.asm\\\" 
+	@${DEP_GEN} -d "${OBJECTDIR}/newAsmTemplate2.o"
+	@${FIXDEPS} "${OBJECTDIR}/newAsmTemplate2.o.d" $(SILENT) -rsi ${MP_AS_DIR} -c18 
 	
 endif
 

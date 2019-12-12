@@ -16,3 +16,7 @@
 /interrupt.X/build/
 /timer.X/build/
 /timer.X/dist/
+/motor.X/build/
+/motor.X/dist/
+/ADC.X/build/
+/ADC.X/dist/
