@@ -131,17 +131,51 @@ void main(void)
     return;
     
 }
-
-// old version: 
-// void interrupt high_priority Hi_ISR(void)
-void __interrupt(high_priority) Hi_ISR(void)
+void SYSTEM_Initialize(void)
 {
-    if(PIR1bits.CCP1IF == 1) {
-        RC2 ^= 1;
-        PIR1bits.CCP1IF = 0;
-        TMR3 = 0;
-    }
-    return ;
+    // PIN_MANAGER_Initialize();
+    OSCILLATOR_Initialize(); //default 1Mhz
+    //    TMR2_Initialize();
+    //    TMR1_Initialize();
+    //    TMR0_Initialize();
+    INTERRUPT_Initialize();
+    UART_Initialize();
+    CCP1_Initialize();
+    ADC_Initialize();
+}
+void INTERRUPT_Initialize (void)
+{
+    RCONbits.IPEN = 1;      //enable Interrupt Priority mode
+    INTCONbits.GIEH = 1;    //enable high priority interrupt
+    INTCONbits.GIEL = 1;     //disable low priority interrupt
+}
+void OSCILLATOR_Initialize(void)
+{
+    // TODO
+    // setting OSCILLATOR  frequency
+    // 8 MHZ
+    OSCCONbits.IRCF2 = 1;
+    OSCCONbits.IRCF1 = 1;
+    OSCCONbits.IRCF0 = 1;
+    
+    
+    // RCON = 0x0000;
+}
+
+void CCP1_Initialize() {
+    TRISCbits.TRISC2=0;	// RC2 pin is output.
+    CCP1CON=9;		// Compare mode, initialize CCP1 pin high, clear output on compare match
+    PIR1bits.CCP1IF=0;
+    IPR1bits.CCP1IP = 1;
+}
+void ADC_Initialize(void) {
+    TRISA = 0xff;		// Set as input port
+    ADCON1 = 0x0e;  	// Ref vtg is VDD & Configure pin as analog pin 
+    // ADCON2 = 0x92;  	
+    ADFM = 1 ;          // Right Justifie
+    ADCON2bits.ADCS = 7; // 
+    ADRESH=0;  			// Flush ADC output Register
+    ADRESL=0;  
 }
 void UART_Initialize() {
     
@@ -193,6 +227,9 @@ void UART_Initialize() {
     IPR1bits.RCIP = 0;              //Setting Rc as low priority interrupt
     }
 
+
+
+
 void UART_Write(unsigned char data)  // Output on Terminal
 {
     while(!TXSTAbits.TRMT);
@@ -228,6 +265,40 @@ void MyusartRead()
 
 // old version: 
 // void interrupt low_priority Lo_ISR(void)
+
+
+
+
+int ADC_Read(int channel)
+{
+    int digital;
+    
+    ADCON0bits.CHS =  0x07; // Select Channe7
+    ADCON0bits.GO = 1;
+    ADCON0bits.ADON = 1;
+    
+    while(ADCON0bits.GO_nDONE==1);
+
+    digital = (ADRESH*256) | (ADRESL);
+    return(digital);
+}
+
+
+
+
+
+
+// old version: 
+// void interrupt high_priority Hi_ISR(void)
+void __interrupt(high_priority) Hi_ISR(void)
+{
+    if(PIR1bits.CCP1IF == 1) {
+        RC2 ^= 1;
+        PIR1bits.CCP1IF = 0;
+        TMR3 = 0;
+    }
+    return ;
+}
 void __interrupt(low_priority)  Lo_ISR(void)
 {
     if(RCIF)
@@ -244,68 +315,4 @@ void __interrupt(low_priority)  Lo_ISR(void)
     
    // process other interrupt sources here, if required
     return;
-}
-
-void ADC_Initialize(void) {
-    TRISA = 0xff;		// Set as input port
-    ADCON1 = 0x0e;  	// Ref vtg is VDD & Configure pin as analog pin 
-    // ADCON2 = 0x92;  	
-    ADFM = 1 ;          // Right Justifie
-    ADCON2bits.ADCS = 7; // 
-    ADRESH=0;  			// Flush ADC output Register
-    ADRESL=0;  
-}
-
-int ADC_Read(int channel)
-{
-    int digital;
-    
-    ADCON0bits.CHS =  0x07; // Select Channe7
-    ADCON0bits.GO = 1;
-    ADCON0bits.ADON = 1;
-    
-    while(ADCON0bits.GO_nDONE==1);
-
-    digital = (ADRESH*256) | (ADRESL);
-    return(digital);
-}
-
-void INTERRUPT_Initialize (void)
-{
-    RCONbits.IPEN = 1;      //enable Interrupt Priority mode
-    INTCONbits.GIEH = 1;    //enable high priority interrupt
-    INTCONbits.GIEL = 1;     //disable low priority interrupt
-}
-
-void SYSTEM_Initialize(void)
-{
-    // PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize(); //default 1Mhz
-//    TMR2_Initialize();
-//    TMR1_Initialize();
-//    TMR0_Initialize();
-    INTERRUPT_Initialize();
-    UART_Initialize();
-    CCP1_Initialize();
-    ADC_Initialize();
-}
-
-void OSCILLATOR_Initialize(void)
-{
-    // TODO
-    // setting OSCILLATOR  frequency
-    // 8 MHZ
-    OSCCONbits.IRCF2 = 1;
-    OSCCONbits.IRCF1 = 1;
-    OSCCONbits.IRCF0 = 1;
-    
-    
-    // RCON = 0x0000;
-}
-
-void CCP1_Initialize() {
-    TRISCbits.TRISC2=0;	// RC2 pin is output.
-    CCP1CON=9;		// Compare mode, initialize CCP1 pin high, clear output on compare match
-    PIR1bits.CCP1IF=0;
-    IPR1bits.CCP1IP = 1;
 }
