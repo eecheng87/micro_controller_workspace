@@ -96,7 +96,7 @@ void main(void) {
     
     PIE1bits.TMR2IE = 1;
     IPR1bits.TMR2IP = 1;
-    PIR1bits.TMR2IF = 1;
+    PIR1bits.TMR2IF = 0;
     
     PR2 = 50;
 
@@ -104,7 +104,7 @@ void main(void) {
     
     return;
 }
-void __interrupt() isr(void){
+void __interrupt(high_priority) isr(void){
     if(count==39){
         LATDbits.LATD0 = LATDbits.LATD0^1;
         LATDbits.LATD1 = LATDbits.LATD1^1;
