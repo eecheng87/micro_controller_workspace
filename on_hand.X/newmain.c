@@ -84,14 +84,19 @@ void Mode1() // print "Hello world"
     ClearBuffer();
     // TODO 
     // Output the result on Command-line Interface.
-    UART_Write_Text("Hello ");
-    UART_Write_Text("World!");
+    UART_Write_Text(" ");
 
     ClearBuffer();
 }
 
 void Mode2() { // Output Voltage 
     ClearBuffer();
+    UART_Write_Text("sp2");
+    while(1){
+       if(strstr(GetString(), "mode1") != NULL){
+            break;
+        } 
+    }
     // breathing led
     
     
@@ -116,6 +121,16 @@ void Mode2() { // Output Voltage
     
     ClearBuffer();
 }
+void Mode3(){
+    ClearBuffer();
+    UART_Write_Text("sp3");
+    while(1){
+       if(strstr(GetString(), "mode1") != NULL){
+            break;
+        } 
+    }
+    ClearBuffer();
+}
 void main(void) 
 {
     
@@ -125,11 +140,13 @@ void main(void)
         // "clear" > clear UART Buffer()
         if(strstr(GetString(), "clear") != NULL)
             ClearBuffer();
-        else if(strstr(GetString(), "mode1") != NULL)
-            Mode1();
+        //else if(strstr(GetString(), "mode1") != NULL)
+          //  Mode1();
         // "mode1" > start Mode1 function as above
         else if(strstr(GetString(), "mode2") != NULL)
             Mode2();
+        else if(strstr(GetString(), "mode3") != NULL)
+            Mode3();
         // "mode2" > start Mode2 function as above*/
     }
     return;
@@ -320,25 +337,8 @@ void __interrupt(high_priority) Hi_ISR(void)
         RC2 ^= 1;
         PIR1bits.CCP1IF = 0;
         TMR3 = 0;
-    }else if(INT0IF&&INT0IE){
-        while(value != 8){
-            CCPR1L = value>>2;
-            CCP1CONbits.CCP1X = value%2;
-            CCP1CONbits.CCP1Y = (value%4)>>1;
-            --value;
-            LATDbits.LATD3 = 1;
-            for(int g=0; g<1000;g++);
-            LATDbits.LATD3 = 0;
-        }
-        //value = 18;
-        while(value != 76){
-            ++value; 
-            CCPR1L = value>>2;
-            CCP1CONbits.CCP1X = value%2;
-            CCP1CONbits.CCP1Y = (value%4)>>1;
-            for(int g=0; g<1000;g++);
-        }
     }
+    
     return ;
 }
 

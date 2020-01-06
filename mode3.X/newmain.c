@@ -6,45 +6,8 @@
 #define _XTAL_FREQ 500000
 #include <xc.h>
 volatile int value = 18;
-int count = 2;
-int start = 0;
-void __interrupt(high_priority) isr(void){
-    if(INT0IF&&INT0IE){
-        /*while(value != 8){
-            CCPR1L = value>>2;
-            CCP1CONbits.CCP1X = value%2;
-            CCP1CONbits.CCP1Y = (value%4)>>1;
-            --value;
-            LATDbits.LATD3 = 1;
-            for(int g=0; g<100;g++);
-            LATDbits.LATD3 = 0;
-        }
-        //value = 18;
-        while(value != 76){
-            ++value; 
-            CCPR1L = value>>2;
-            CCP1CONbits.CCP1X = value%2;
-            CCP1CONbits.CCP1Y = (value%4)>>1;
-            for(int g=0; g<100;g++);
-        }
-        /*value = 18;
-        CCPR1L = value;
-        CCPR1H = value;*/
-       
-        start = 1;
-             
-       INTCONbits.INT0IF = 0;       
-    }else if(TMR3IF&&start==1&&count>=0){
-        PIR2bits.TMR3IF = 0;
-        LATD = 0xff;
-        CCPR1L-=1;
-        TMR3 = 3036;
-        count--;  
-    }
-
-   
-}
-
+int count = 3;
+int start = 2;
 void timer3_init(){
     T3CONbits.RD16 = 1;
     //T3CONbits.T3CCP1 = 1;
@@ -59,8 +22,27 @@ void timer3_init(){
     TMR3 = 3036;
     //TMR3 = 0;
 }
+void __interrupt(high_priority) isr(void){
+    if(INT0IF){
+        LATD = 0xff;
+        start -= 1;
+        timer3_init();
+        INTCONbits.INT0IF = 0;       
+    }
+    if(TMR3IF&&start<-1&&count>=0){
+        PIR2bits.TMR3IF = 0;
+        CCPR1L-=1;
+        TMR3 = 3036;
+        count--;  
+    }
+
+   
+}
+
+
 void main(void) {
-    timer3_init();
+    
+    start = 0;
     // allow global interrupt
     RCONbits.IPEN = 1;
     // enable all unmasked interrupt
