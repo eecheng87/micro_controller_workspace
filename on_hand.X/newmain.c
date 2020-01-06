@@ -18,7 +18,7 @@
 
 // CONFIG3H
 #pragma config CCP2MX = PORTC   // CCP2 MUX bit (CCP2 input/output is multiplexed with RC1)
-#pragma config PBADEN = ON      // PORTB A/D Enable bit (PORTB<4:0> pins are configured as analog input channels on Reset)
+#pragma config PBADEN = OFF      // PORTB A/D Enable bit (PORTB<4:0> pins are configured as analog input channels on Reset)
 #pragma config LPT1OSC = OFF    // Low-Power Timer1 Oscillator Enable bit (Timer1 configured for higher power operation)
 #pragma config MCLRE = ON       // MCLR Pin Enable bit (MCLR pin enabled; RE3 input pin disabled)
 
@@ -58,6 +58,7 @@
 #pragma config EBTRB = OFF      // Boot Block Table Read Protection bit (Boot block (000000-0007FFh) not protected from table reads executed in other blocks)
 
 
+
 // using namespace std;
 
 char mystring[20];
@@ -77,7 +78,7 @@ void INTERRUPT_Initialize(void);
 void CCP1_Initialize();
 void ADC_Initialize() ;
 int ADC_Read(int channel);
-
+volatile int value = 18;
 void Mode1() // print "Hello world"
 {
     ClearBuffer();
@@ -91,7 +92,10 @@ void Mode1() // print "Hello world"
 
 void Mode2() { // Output Voltage 
     ClearBuffer();
-    int digital = 0;
+    // breathing led
+    
+    
+    /*int digital = 0;
     float voltage = 0.0;
     while(1) // TODO design a condition. Return to main function when the while loop is over.
     {
@@ -108,7 +112,7 @@ void Mode2() { // Output Voltage
         UART_Write_Text(" ");
         // The voltage must have the second digit after the decimal point.
         for(int i = 0 ; i < 10000 ; i++) ; // a delay time
-    }
+    }*/
     
     ClearBuffer();
 }
@@ -140,7 +144,7 @@ void SYSTEM_Initialize(void)
     //    TMR0_Initialize();
     INTERRUPT_Initialize();
     UART_Initialize();
-    CCP1_Initialize();
+    //CCP1_Initialize();
     ADC_Initialize();
 }
 void INTERRUPT_Initialize (void)
@@ -163,10 +167,30 @@ void OSCILLATOR_Initialize(void)
 }
 
 void CCP1_Initialize() {
-    TRISCbits.TRISC2=0;	// RC2 pin is output.
-    CCP1CON=9;		// Compare mode, initialize CCP1 pin high, clear output on compare match
-    PIR1bits.CCP1IF=0;
-    IPR1bits.CCP1IP = 1;
+    //TRISCbits.TRISC2=0;	// RC2 pin is output.
+    //CCP1CON=9;		// Compare mode, initialize CCP1 pin high, clear output on compare match
+    
+    //PIR1bits.CCP1IF=0;
+    //IPR1bits.CCP1IP = 1;
+    CCPR1L = 18;
+    CCPR1H = 18;
+    //PIE1bits.TMR2IE = 1;
+    //PIR1bits.TMR2IF = 1;  
+    //(1)Set the PWM period by writing to the PR2 register.
+    PR2 = 155;
+    //(2)Set the PWM duty cycle by writing to the CCPRxL register
+    //and CCPxCON<5:4> bits. 
+    CCP1CONbits.DC1B = 3;
+    //(3)Make the CCPx pin an output by clearing the appropriate TRIS bit
+    TRISCbits.RC2 = 0;
+    //(4)Set the TMR2 prescale value
+    T2CONbits.T2CKPS = 3; 
+    //(4)enable Timer2 by writing to T2CON.
+    T2CONbits.TMR2ON = 1;
+    //Internal Oscillator Frequency Select bits : 500kHz
+     OSCCONbits.IRCF = 3; 
+    //(5)Configure the CCPx module for PWM operation. 
+    CCP1CONbits.CCP1M = 12;
 }
 void ADC_Initialize(void) {
     TRISA = 0xff;		// Set as input port
@@ -225,7 +249,7 @@ void UART_Initialize() {
     IPR1bits.TXIP = 0;              //Setting Tx as low priority interrupt
     PIE1bits.RCIE = 1;              //Enable Rx interrupt
     IPR1bits.RCIP = 0;              //Setting Rc as low priority interrupt
-    }
+}
 
 
 
@@ -273,7 +297,7 @@ int ADC_Read(int channel)
 {
     int digital;
     
-    ADCON0bits.CHS =  0x07; // Select Channe7
+    ADCON0bits.CHS =  0x00; // Select Channe7
     ADCON0bits.GO = 1;
     ADCON0bits.ADON = 1;
     
@@ -296,9 +320,28 @@ void __interrupt(high_priority) Hi_ISR(void)
         RC2 ^= 1;
         PIR1bits.CCP1IF = 0;
         TMR3 = 0;
+    }else if(INT0IF&&INT0IE){
+        while(value != 8){
+            CCPR1L = value>>2;
+            CCP1CONbits.CCP1X = value%2;
+            CCP1CONbits.CCP1Y = (value%4)>>1;
+            --value;
+            LATDbits.LATD3 = 1;
+            for(int g=0; g<1000;g++);
+            LATDbits.LATD3 = 0;
+        }
+        //value = 18;
+        while(value != 76){
+            ++value; 
+            CCPR1L = value>>2;
+            CCP1CONbits.CCP1X = value%2;
+            CCP1CONbits.CCP1Y = (value%4)>>1;
+            for(int g=0; g<1000;g++);
+        }
     }
     return ;
 }
+
 void __interrupt(low_priority)  Lo_ISR(void)
 {
     if(RCIF)
